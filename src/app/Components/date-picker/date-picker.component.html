@@ -1,11 +1,16 @@
-<tui-input-date-time
+<form
     class="b-form"
-    [formControl]="control"
+    [formGroup]="testForm"
 >
-    Choose date and time
-</tui-input-date-time>
+    <tui-input-date-time
+        formControlName="testValue"
+        [tuiTextfieldCleaner]="true"
+    >
+        Choose date and time
+        <input
+            placeholder="10.10.1998 01:22"
+            tuiTextfield
+        />
+    </tui-input-date-time>
 
-<p>Stringified control value:</p>
-<p>
-    <code>{{ control.value }}</code>
-</p>
+</form>

@@ -19,5 +19,5 @@ import { MainPageComponent } from "./pages/main-page/main-page.component";
     providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}]
 })
 export class AppComponent {
-  title = 'Front-end';
+  title = 'Calender';
 }
