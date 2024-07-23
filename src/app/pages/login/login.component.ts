@@ -43,9 +43,12 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe(
       response => {
         console.log('Login successful', response);
+        localStorage.setItem('accessToken', response.access_token); // Save access token
         this.errorMessage = ''
         this.isLoading = false; // Stop loading
         // Handle successful login, possibly navigate to another route
+        // Navigate to a different route, e.g., the dashboard
+        this.router.navigate(['/']);
       },
       error => {
         console.error('Login failed', error);
@@ -54,6 +57,10 @@ export class LoginComponent {
         //this.errorMessage = 'Invalid email or password. Please try again.'; // Set error message
       }
     );
+  }
+
+  navigateToSignup() {
+    this.router.navigate(['/signup']);
   }
 
   // private handleError(error: HttpErrorResponse): Observable<ServerError> {

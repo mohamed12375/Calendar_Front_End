@@ -3,25 +3,26 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="email">Email:</label>
-
       <tui-input [(ngModel)]="email" name="email" type="email" placeholder="Enter your email" required>
         Type an email
-        <input
-            tuiTextfield
-            type="email"
-        />
-    </tui-input>
-
+        <input tuiTextfield type="email" />
+      </tui-input>
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <tui-input-password [(ngModel)]="password" name="password" placeholder="Enter your password" required></tui-input-password>
+      <tui-input [(ngModel)]="password" name="password" placeholder="Enter your password" required>
+        Type a password
+        <input tuiTextfield type="password" />
+      </tui-input>
     </div>
     <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div> <!-- Error message -->
-
     <button tuiButton type="submit" appearance="primary" [disabled]="isLoading">
       <ng-container *ngIf="isLoading; else loginText"></ng-container>
       <ng-template #loginText>Login</ng-template>
     </button>
+    <div class="signup-link">
+      <span>Don't have an account?</span>
+      <button tuiButton type="button" appearance="link" (click)="navigateToSignup()">Sign Up</button>
+    </div>
   </form>
 </div>
