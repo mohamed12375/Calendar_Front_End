@@ -3,6 +3,13 @@ import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER } from "@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MainPageComponent } from "./pages/main-page/main-page.component";
+import { LoginComponent } from "./pages/login/login.component";
+import { SignupComponent } from "./pages/signup/signup.component";
+
+import { FormsModule } from '@angular/forms';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-root',
@@ -13,10 +20,15 @@ import { MainPageComponent } from "./pages/main-page/main-page.component";
     TuiRootModule,
     TuiDialogModule,
     TuiAlertModule,
+    FormsModule,
+    LoginComponent,
+    SignupComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-    providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}]
+  providers: [
+    { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }, // Add custom sanitizer provider
+  ],// Add custom sanitizer provider]
 })
 export class AppComponent {
   title = 'Calender';

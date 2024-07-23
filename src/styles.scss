@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ensure the entire HTML document takes up full height and width */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  background-color: #f0f0f0; /* Optional: background color */
+}
+
+#root {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f0f0; /* Optional: background color */
+}
