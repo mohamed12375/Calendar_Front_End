@@ -4,10 +4,17 @@ import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom } fr
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideHttpClient } from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { AuthInterceptorProvider } from "./providers/InterceptorProvider";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideHttpClient(),provideAnimations(), provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), importProvidersFrom(TuiRootModule)]
+  providers: [provideHttpClient(),provideAnimations(),
+     provideZoneChangeDetection({ eventCoalescing: true }),
+     provideRouter(routes),
+     importProvidersFrom(TuiRootModule),
+     AuthInterceptorProvider,
+     provideHttpClient(withInterceptorsFromDi()), // Provide HttpClient with interceptors
+    ]
 };
 
 export class AppModule {}

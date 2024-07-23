@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MyCalendarComponent } from '../../Components/my-calendar/my-calendar.component';
-import { MyEventsComponent } from '../../Components/my-events/my-events.component';
+import { EventFormComponent } from '../../Components/event-form/event-form.component';
 import { TuiInputDateTimeExample5 } from '../../Components/date-picker/date-picker.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { TuiInputDateTimeExample5 } from '../../Components/date-picker/date-pick
   imports: [
     TuiInputDateTimeExample5,
     MyCalendarComponent,
-    MyEventsComponent,
+    EventFormComponent,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'

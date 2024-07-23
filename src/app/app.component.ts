@@ -5,9 +5,12 @@ import { RouterOutlet } from '@angular/router';
 import { MainPageComponent } from "./pages/main-page/main-page.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { SignupComponent } from "./pages/signup/signup.component";
+import { EventFormComponent } from './Components/event-form/event-form.component';
+
 
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+
 
 
 
@@ -23,6 +26,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     FormsModule,
     LoginComponent,
     SignupComponent,
+    EventFormComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

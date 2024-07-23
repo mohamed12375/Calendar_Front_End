@@ -6,7 +6,18 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(req).pipe(
+    // Get the access token from local storage
+    const accessToken = localStorage.getItem('accessToken');
+
+    // Clone the request to add the new header
+    let clonedReq = req;
+    if (accessToken) {
+      clonedReq = req.clone({
+        headers: req.headers.set('Authorization', `${accessToken}`)
+      });
+    }
+
+    return next.handle(clonedReq).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
           // Delete token and refresh the page
