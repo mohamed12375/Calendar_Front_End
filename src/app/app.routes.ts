@@ -8,6 +8,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { AuthGuard } from './Helpers/auth.guard';  // Import the auth guard
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Helpers/auth.interceptor';
+import { EventListComponent } from './Components/event-list copy/event-list-ang.component';
 
 
 
@@ -16,7 +17,8 @@ export const routes: Routes = [
   { path: 'signup', component: SignupComponent,canActivate: [AuthGuard] },
   { path: 'calendar', component: MyCalendarComponent, canActivate: [AuthGuard] }, // Protect route
   { path: 'events', component: EventFormComponent, canActivate: [AuthGuard] }, // Protect route
-  { path: '', redirectTo: '/events', pathMatch: 'full' },
+  { path: 'events-list', component: EventListComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/events-list', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -10,6 +10,12 @@ import { EventFormComponent } from './Components/event-form/event-form.component
 
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { EventListComponent } from "./Components/event-list copy/event-list-ang.component";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+import { MatTableModule } from "@angular/material/table";
 
 
 
@@ -27,7 +33,9 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     LoginComponent,
     SignupComponent,
     EventFormComponent,
-  ],
+    EventListComponent,
+    MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule
+    ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [

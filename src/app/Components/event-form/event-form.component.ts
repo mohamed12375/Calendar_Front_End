@@ -15,7 +15,8 @@ import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
     ReactiveFormsModule,
     TuiInputPasswordModule,
     CommonModule, // Add CommonModule here
-  ],  templateUrl: './event-form.component.html',
+  ],
+  templateUrl: './event-form.component.html',
   styleUrls: ['./event-form.component.scss']
 })
 export class EventFormComponent {
