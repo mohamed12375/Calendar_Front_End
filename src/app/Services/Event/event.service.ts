@@ -11,7 +11,7 @@ export class EventService {
 
   constructor(private http: HttpClient) {}
 
-  getEvents(page: number, pageSize: number, searchTerm: string, isAscending: boolean): Observable<CalendarEvent[]> {
+  getEvents(page: number = 1, pageSize: number = 100, searchTerm: string = '', isAscending: boolean = true): Observable<CalendarEvent[]> {
     let params = new HttpParams()
       .set('page', page.toString())
       .set('pageSize', pageSize.toString())

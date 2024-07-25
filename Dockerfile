@@ -1,5 +1,5 @@
-# Stage 1: Build the Angular project
-FROM node:20.13.1 AS build
+# Use a Node.js base image for building and serving the Angular project
+FROM node:latest
 
 # Set the working directory
 WORKDIR /app
@@ -13,17 +13,8 @@ RUN npm install
 # Copy the rest of the project files
 COPY . .
 
-# Build the Angular project
-RUN npm run build --prod
+# Expose port 4200, the default port for Angular development server
+EXPOSE 4200
 
-# Stage 2: Serve the application with Nginx
-FROM nginx:alpine
-
-# Copy the built Angular files from the build stage
-COPY --from=build /app/dist/calendar /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Run ng serve for development
+CMD ["npm", "start"]
