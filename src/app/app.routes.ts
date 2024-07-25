@@ -16,7 +16,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent,canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent,canActivate: [AuthGuard] },
   { path: 'calendar', component: MyCalendarComponent, canActivate: [AuthGuard] }, // Protect route
-  { path: 'events', component: EventFormComponent, canActivate: [AuthGuard] }, // Protect route
+  { path: 'create-event', component: EventFormComponent, canActivate: [AuthGuard] }, // Protect route
   { path: 'events-list', component: EventListComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/events-list', pathMatch: 'full' },
 ];

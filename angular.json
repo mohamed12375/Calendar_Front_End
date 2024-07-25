@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/calendar",
+            "outputPath": "dist/front-end",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -55,7 +55,8 @@
               "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
               "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
               "node_modules/@taiga-ui/styles/taiga-ui-global.less",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           },
@@ -114,7 +115,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           }

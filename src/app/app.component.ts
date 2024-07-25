@@ -16,6 +16,8 @@ import { MatInputModule } from "@angular/material/input";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTableModule } from "@angular/material/table";
+import {TuiInputDateTimeModule} from '@taiga-ui/kit';
+
 
 
 
@@ -34,7 +36,8 @@ import { MatTableModule } from "@angular/material/table";
     SignupComponent,
     EventFormComponent,
     EventListComponent,
-    MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule
+    MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule,
+    TuiInputDateTimeModule
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

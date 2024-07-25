@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CalendarEvent } from '../../Models/reponses/Models/Event';
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +11,23 @@ export class EventService {
 
   constructor(private http: HttpClient) {}
 
-  getEvents(page: number, pageSize: number, searchTerm: string, isAscending: boolean): Observable<any> {
+  getEvents(page: number, pageSize: number, searchTerm: string, isAscending: boolean): Observable<CalendarEvent[]> {
     let params = new HttpParams()
       .set('page', page.toString())
       .set('pageSize', pageSize.toString())
       .set('searchTerm', searchTerm)
       .set('isAscending', isAscending.toString());
 
-    return this.http.get(`${this.baseUrl}/events`, { params });
+      console.log("dsfs")
+
+    return this.http.get<CalendarEvent[]>(`${this.baseUrl}/events`, { params });
   }
 
-  deleteEvent(eventId: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/events/${eventId}`);
+  deleteEvent(eventId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${eventId}`);
   }
 
-  createEvent(event: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/events`, event);
+  createEvent(event: CalendarEvent): Observable<CalendarEvent> {
+    return this.http.post<CalendarEvent>(`${this.baseUrl}`, event);
   }
 }
